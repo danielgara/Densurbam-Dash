@@ -1,4 +1,5 @@
-from dash import html
+import dash
+from dash import html, dcc
 
 class Breadcrumb:
     @staticmethod
@@ -6,9 +7,9 @@ class Breadcrumb:
         items = [
             html.Li(
                 item['title'] if index == len(navigationList)-1 else
-                html.A(
+                dcc.Link(
                     item['title'],
-                    href=item['route']
+                    href=dash.page_registry[item['route']]['path'],
                 ),
                 className='breadcrumb-item',
             )

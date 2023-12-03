@@ -12,11 +12,11 @@ class ByUnitPage:
         navigationList = [
             {
                 'title': 'Inicio',
-                'route': './'
+                'route': 'Home'
             },
             {
                 'title': 'Consulta por unidad de análisis',
-                'route': self.path
+                'route': self.name
             }
         ]
         self.layout = html.Div([

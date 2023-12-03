@@ -12,7 +12,7 @@ class ControlPanelPage:
         navigationList = [
             {
                 'title': 'Inicio',
-                'route': './'
+                'route': 'Home'
             },
             {
                 'title': 'Panel de control',

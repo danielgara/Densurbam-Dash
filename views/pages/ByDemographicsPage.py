@@ -12,11 +12,11 @@ class ByDemographicsPage:
         navigationList = [
             {
                 'title': 'Inicio',
-                'route': './'
+                'route': 'Home'
             },
             {
                 'title': 'Consulta por demografía',
-                'route': self.path
+                'route': self.name
             }
         ]
         self.layout = html.Div([

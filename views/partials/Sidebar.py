@@ -5,7 +5,7 @@ class Sidebar:
     @staticmethod
     def define_layout():
         return html.Ul([
-                html.A([
+                dcc.Link([
                         html.Div('D', className='sidebar-brand-icon rotate-n-15 display-icon', id='main-icon'),
                         html.Div('Densurbam', className='sidebar-brand-text mx-3')
                     ],

@@ -12,7 +12,7 @@ class HomePage:
         navigationList = [
             {
                 'title': 'Inicio',
-                'route': './'
+                'route': 'Home'
             }
         ]
         self.layout = html.Div([

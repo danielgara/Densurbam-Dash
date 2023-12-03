@@ -12,11 +12,11 @@ class ByYearPage:
         navigationList = [
             {
                 'title': 'Inicio',
-                'route': './'
+                'route': 'Home'
             },
             {
                 'title': 'Consulta por año',
-                'route': self.path
+                'route': self.name
             }
         ]
         self.layout = html.Div([
