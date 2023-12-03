@@ -25,10 +25,40 @@ class Sidebar:
                 ),
                 html.Li(
                     dcc.Link([
-                            html.I(className='fas fa-fw fa-info-circle'),
-                            html.Span('Analíticas'),
+                            html.I(className='fas fa-fw fa-cog'),
+                            html.Span('Panel de control'),
                         ],
-                        href=dash.page_registry['Analytics']['path'],
+                        href=dash.page_registry['ControlPanel']['path'],
+                        className='router-link-active router-link-exact-active nav-link'
+                    ),
+                    className='nav-item'
+                ),
+                html.Li(
+                    dcc.Link([
+                            html.I(className='fas fa-fw fa-chart-area'),
+                            html.Span('Consulta por UA'),
+                        ],
+                        href=dash.page_registry['ByUnit']['path'],
+                        className='router-link-active router-link-exact-active nav-link'
+                    ),
+                    className='nav-item'
+                ),
+                html.Li(
+                    dcc.Link([
+                            html.I(className='fas fa-fw fa-chart-area'),
+                            html.Span('Consulta por año'),
+                        ],
+                        href=dash.page_registry['ByYear']['path'],
+                        className='router-link-active router-link-exact-active nav-link'
+                    ),
+                    className='nav-item'
+                ),
+                html.Li(
+                    dcc.Link([
+                            html.I(className='fas fa-fw fa-chart-area'),
+                            html.Span('Consulta por demografía'),
+                        ],
+                        href=dash.page_registry['ByDemographics']['path'],
                         className='router-link-active router-link-exact-active nav-link'
                     ),
                     className='nav-item'

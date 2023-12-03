@@ -1,11 +1,11 @@
 from dash import html
 from views.components.Breadcrumb import Breadcrumb
 
-class AnalyticsPage:
+class ByUnitPage:
     def __init__(self):
-        self.name = 'Analytics'
-        self.path = '/analytics'
-        self.title = 'Densurbam - Analíticas'
+        self.name = 'ByUnit'
+        self.path = '/by-unit-of-analysis'
+        self.title = 'Densurbam - Consulta por unidad de análisis'
         self.set_layout()
 
     def set_layout(self):
@@ -15,7 +15,7 @@ class AnalyticsPage:
                 'route': './'
             },
             {
-                'title': 'Analíticas',
+                'title': 'Consulta por unidad de análisis',
                 'route': self.path
             }
         ]
