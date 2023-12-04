@@ -3,6 +3,7 @@ import plotly.graph_objects as go
 import pandas as pd
 from views.components.Breadcrumb import Breadcrumb
 
+
 class ByUnitPage:
     def __init__(self):
         self.name = 'ByUnit'
@@ -37,15 +38,15 @@ class ByUnitPage:
             locationmode='USA-states',
             colorscale='Reds',
             autocolorscale=False,
-            text=df['text'], 
+            text=df['text'],
             marker_line_color='white',
             colorbar_title="Millones USD"
         ))
 
         fig.update_layout(
-            geo = dict(
+            geo=dict(
                 scope='usa',
-                projection=go.layout.geo.Projection(type = 'albers usa'),
+                projection=go.layout.geo.Projection(type='albers usa'),
                 showlakes=True,
                 lakecolor='rgb(255, 255, 255)'),
             margin=dict(t=30, b=20)
@@ -54,16 +55,12 @@ class ByUnitPage:
         self.layout = html.Div([
             Breadcrumb.define_layout(navigationList),
             html.Div([
-                    html.Div([
-                            html.H6("Exportaciones de agricultura por estado (2021)", className="m-0 font-weight-bold text-primary")
-                        ],
-                        className="card-header py-3"
-                    ),
-                    html.Div(
-                        dcc.Graph(figure=fig),
-                        className="card-body"
-                    )
-                ],
-                className="card shadow mb-4",
-            ),
+                html.Div([
+                    html.H6("Exportaciones de agricultura por estado (2021)", className="m-0 font-weight-bold text-primary")
+                ], className="card-header py-3"),
+                html.Div(
+                    dcc.Graph(figure=fig),
+                    className="card-body"
+                )
+            ], className="card shadow mb-4"),
         ])

@@ -1,7 +1,8 @@
-from dash import html, dcc, callback, Output, Input, dash_table, dcc
+from dash import html, dcc, callback, Output, Input, dash_table
 from views.components.Breadcrumb import Breadcrumb
 import plotly.express as px
 import pandas as pd
+
 
 class ByYearPage:
     df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/gapminder_unfiltered.csv')
@@ -49,7 +50,7 @@ class ByYearPage:
                         ], className="card-header py-3"),
                         html.Div([
                             dash_table.DataTable(
-                                data=ByYearPage.df.to_dict('records'), 
+                                data=ByYearPage.df.to_dict('records'),
                                 columns=[
                                     {'name': 'País', 'id': 'country'},
                                     {'name': 'Año', 'id': 'year'},
@@ -69,7 +70,7 @@ class ByYearPage:
         Input('dropdown-selection', 'value')
     )
     def update_graph(value):
-        dff = ByYearPage.df[ByYearPage.df.country==value]
+        dff = ByYearPage.df[ByYearPage.df.country == value]
         fig = px.line(dff, x='year', y='pop')
 
         fig.update_layout(

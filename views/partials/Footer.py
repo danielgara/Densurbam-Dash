@@ -1,5 +1,6 @@
 from dash import html
 
+
 class Footer:
     @staticmethod
     def define_layout():

@@ -1,77 +1,81 @@
 import dash
 from dash import html, dcc, callback, Input, Output, State
 
+
 class Sidebar:
     @staticmethod
     def define_layout():
         return html.Ul([
-                dcc.Link([
-                        html.Div('D', className='sidebar-brand-icon rotate-n-15 display-icon', id='main-icon'),
-                        html.Div('Densurbam', className='sidebar-brand-text mx-3')
+            dcc.Link(
+                [
+                    html.Div('D', className='sidebar-brand-icon rotate-n-15 display-icon', id='main-icon'),
+                    html.Div('Densurbam', className='sidebar-brand-text mx-3')
+                ],
+                className='sidebar-brand d-flex align-items-center justify-content-center',
+                href=dash.page_registry['Home']['path']
+            ),
+            html.Hr(className='sidebar-divider my-0 hr-nav-top'),
+            html.Li(
+                dcc.Link(
+                    [
+                        html.I(className='fas fa-fw fa-home'),
+                        html.Span('Inicio'),
                     ],
-                    className='sidebar-brand d-flex align-items-center justify-content-center',
                     href=dash.page_registry['Home']['path'],
+                    className='router-link-active router-link-exact-active nav-link'
                 ),
-                html.Hr(className='sidebar-divider my-0 hr-nav-top'),
-                html.Li(
-                    dcc.Link([
-                            html.I(className='fas fa-fw fa-home'),
-                            html.Span('Inicio'),
-                        ],
-                        href=dash.page_registry['Home']['path'],
-                        className='router-link-active router-link-exact-active nav-link'
-                    ),
-                    className='nav-item'
+                className='nav-item'
+            ),
+            html.Li(
+                dcc.Link(
+                    [
+                        html.I(className='fas fa-fw fa-cog'),
+                        html.Span('Panel de control'),
+                    ],
+                    href=dash.page_registry['ControlPanel']['path'],
+                    className='router-link-active router-link-exact-active nav-link'
                 ),
-                html.Li(
-                    dcc.Link([
-                            html.I(className='fas fa-fw fa-cog'),
-                            html.Span('Panel de control'),
-                        ],
-                        href=dash.page_registry['ControlPanel']['path'],
-                        className='router-link-active router-link-exact-active nav-link'
-                    ),
-                    className='nav-item'
+                className='nav-item'
+            ),
+            html.Li(
+                dcc.Link(
+                    [
+                        html.I(className='fas fa-fw fa-chart-area'),
+                        html.Span('Consulta por UA'),
+                    ],
+                    href=dash.page_registry['ByUnit']['path'],
+                    className='router-link-active router-link-exact-active nav-link'
                 ),
-                html.Li(
-                    dcc.Link([
-                            html.I(className='fas fa-fw fa-chart-area'),
-                            html.Span('Consulta por UA'),
-                        ],
-                        href=dash.page_registry['ByUnit']['path'],
-                        className='router-link-active router-link-exact-active nav-link'
-                    ),
-                    className='nav-item'
+                className='nav-item'
+            ),
+            html.Li(
+                dcc.Link(
+                    [
+                        html.I(className='fas fa-fw fa-chart-area'),
+                        html.Span('Consulta por año'),
+                    ],
+                    href=dash.page_registry['ByYear']['path'],
+                    className='router-link-active router-link-exact-active nav-link'
                 ),
-                html.Li(
-                    dcc.Link([
-                            html.I(className='fas fa-fw fa-chart-area'),
-                            html.Span('Consulta por año'),
-                        ],
-                        href=dash.page_registry['ByYear']['path'],
-                        className='router-link-active router-link-exact-active nav-link'
-                    ),
-                    className='nav-item'
+                className='nav-item'
+            ),
+            html.Li(
+                dcc.Link(
+                    [
+                        html.I(className='fas fa-fw fa-chart-area'),
+                        html.Span('Consulta por demografía'),
+                    ],
+                    href=dash.page_registry['ByDemographics']['path'],
+                    className='router-link-active router-link-exact-active nav-link'
                 ),
-                html.Li(
-                    dcc.Link([
-                            html.I(className='fas fa-fw fa-chart-area'),
-                            html.Span('Consulta por demografía'),
-                        ],
-                        href=dash.page_registry['ByDemographics']['path'],
-                        className='router-link-active router-link-exact-active nav-link'
-                    ),
-                    className='nav-item'
-                ),
-                html.Hr(className='sidebar-divider my-0 hr-nav-bottom'),
-                html.Div(
-                    html.Button(className='rounded-circle border-0', id='sidebarToggle'),
-                    className='text-center d-none d-md-inline',
-                )
-            ],
-            className='navbar-nav sidebar sidebar-dark accordion',
-            id='accordionSidebar'
-        )
+                className='nav-item'
+            ),
+            html.Hr(className='sidebar-divider my-0 hr-nav-bottom'),
+            html.Div(
+                html.Button(className='rounded-circle border-0', id='sidebarToggle'),
+                className='text-center d-none d-md-inline',
+            )
+        ], className='navbar-nav sidebar sidebar-dark accordion', id='accordionSidebar')
 
     @callback(
         Output('accordionSidebar', 'className'),
@@ -83,7 +87,7 @@ class Sidebar:
     def toggle_classes(n_clicks, accordionSidebar_class, main_icon_class):
         if n_clicks is None:
             return dash.no_update, dash.no_update
-        
+
         sidebar_ne = 'toggled'
         sidebar_new = accordionSidebar_class
         if sidebar_ne not in sidebar_new:

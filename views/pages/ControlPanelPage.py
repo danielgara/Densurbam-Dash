@@ -1,6 +1,7 @@
 from dash import html
 from views.components.Breadcrumb import Breadcrumb
 
+
 class ControlPanelPage:
     def __init__(self):
         self.name = 'ControlPanel'
@@ -19,20 +20,15 @@ class ControlPanelPage:
                 'route': self.path
             }
         ]
+
         self.layout = html.Div([
             Breadcrumb.define_layout(navigationList),
             html.Div([
-                    html.Div([
-                            html.H6("Panel de control", className="m-0 font-weight-bold text-primary")
-                        ],
-                        className="card-header py-3"
-                    ),
-                    html.Div([
-                            html.P("En desarrollo ... "),
-                        ],
-                        className="card-body"
-                    )
-                ],
-                className="card shadow mb-4",
-            ),
+                html.Div([
+                    html.H6("Panel de control", className="m-0 font-weight-bold text-primary")
+                ], className="card-header py-3"),
+                html.Div([
+                    html.P("En desarrollo ... "),
+                ], className="card-body")
+            ], className="card shadow mb-4"),
         ])
