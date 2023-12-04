@@ -16,6 +16,7 @@ class HomePage:
                 'route': 'Home'
             }
         ]
+        
         self.layout = html.Div([
             Breadcrumb.define_layout(navigationList),
             html.Div([
