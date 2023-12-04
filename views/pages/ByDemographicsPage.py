@@ -47,8 +47,8 @@ class ByDemographicsPage:
                             range=[-120, 120],
                             tickvals=[-100, -70, -30, 0, 30, 70, 100],
                             ticktext=[100, 70, 30, 0, 30, 70, 100],
-                            title='Count'),
-                        yaxis=dict(title="Age"),
+                            title='Cantidad'),
+                        yaxis=dict(title="Edad"),
                         barmode="overlay",
                         bargap=0.1,
                         margin=dict(t=40, b=20))

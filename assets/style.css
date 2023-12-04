@@ -1,5 +1,5 @@
-body{
-    font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"
+body, .cell-table{
+    font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji" !important;
 }
 
 #accordionSidebar{
@@ -61,4 +61,8 @@ a:hover{
 
 .width-400{
     max-width: 400px !important;
+}
+
+.column-header-name{
+    font-weight: bold;
 }
