@@ -37,8 +37,8 @@ class ByUnitPage:
             locationmode='USA-states',
             colorscale='Reds',
             autocolorscale=False,
-            text=df['text'], # hover text
-            marker_line_color='white', # line markers between states
+            text=df['text'], 
+            marker_line_color='white',
             colorbar_title="Millones USD"
         ))
 
@@ -46,7 +46,7 @@ class ByUnitPage:
             geo = dict(
                 scope='usa',
                 projection=go.layout.geo.Projection(type = 'albers usa'),
-                showlakes=True, # lakes
+                showlakes=True,
                 lakecolor='rgb(255, 255, 255)'),
             margin=dict(t=30, b=20)
         )

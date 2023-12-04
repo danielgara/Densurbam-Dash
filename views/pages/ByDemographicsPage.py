@@ -22,10 +22,8 @@ class ByDemographicsPage:
             }
         ]
 
-        # Load the data into a pandas DataFrame
         df = pd.read_csv("data/population_data.csv")
 
-        # Create the male and female bar traces
         trace_male = go.Bar(x=df[df["gender"]=="M"]["count"],
                             y=df[df["gender"]=="M"]["age"],
                             orientation="h",
@@ -42,7 +40,6 @@ class ByDemographicsPage:
                             hoverinfo='text',
                             marker=dict(color="#d62728"))
 
-        # Create the layout
         layout = go.Layout(xaxis=go.layout.XAxis(
                             range=[-120, 120],
                             tickvals=[-100, -70, -30, 0, 30, 70, 100],
@@ -53,7 +50,6 @@ class ByDemographicsPage:
                         bargap=0.1,
                         margin=dict(t=40, b=20))
 
-        # Create the figure
         fig = go.Figure(data=[trace_male, trace_female], layout=layout)
 
         self.layout = html.Div([

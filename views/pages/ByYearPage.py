@@ -72,7 +72,6 @@ class ByYearPage:
         dff = ByYearPage.df[ByYearPage.df.country==value]
         fig = px.line(dff, x='year', y='pop')
 
-        # Update x-axis label to 'Año'
         fig.update_layout(
             xaxis_title='Año',
             yaxis_title='Población',
